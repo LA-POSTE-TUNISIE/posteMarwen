@@ -27,6 +27,7 @@ import { UpdateCoffreComponent } from 'src/app/reveveur/coffre/update-coffre/upd
 import { HistoriqueComponent } from 'src/app/reveveur/historique/historique/historique.component';
 import { DetailsComponent } from 'src/app/reveveur/historique/details/details.component';
 import { NotificationsComponent } from 'src/app/dashboard/shared/notifications/notifications.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { NotificationsComponent } from 'src/app/dashboard/shared/notifications/n
     SharedModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class DashboardModule { }

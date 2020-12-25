@@ -8,19 +8,28 @@ import { AdminService } from 'src/app/services/admin/admin.service';
   styleUrls: ['./list-receveurs.component.css']
 })
 export class ListReceveursComponent implements OnInit {
-  users=[];
+  users;
   poste:String;
   nom:String;
   matricule:String;
-  fpassword:String;
+  password:String;
+  email:String;
   displayedColumns: string[] ;
-    dataSource;
+ dataSource;
   constructor(private adminService: AdminService) { }
 
   ngOnInit(): void {
     this.users=this.adminService.listUsers();
-    this.displayedColumns= ['poste','nom', 'matricule', 'fpassword']
-    this.dataSource = new MatTableDataSource(this.users)
+
+    this.users.subscribe((response:any) => {
+      console.log("ok",response.user);
+      this.displayedColumns= ['poste','nom', 'matricule','email', 'password']
+      this.dataSource = new MatTableDataSource(response.user)
+    });  
+
+
+ 
+ 
     
   }
 

@@ -20,8 +20,8 @@ export class AddReceveurComponent implements OnInit {
       poste: new FormControl('',Validators.required),
       nom:new FormControl('',Validators.required),
       matricule: new FormControl('',[Validators.required,Validators.min(1000000)]),
-      fpassword: new FormControl('',Validators.required),
-      cpassword: new FormControl('',Validators.required)
+      password: new FormControl('',Validators.required),
+      email: new FormControl('',Validators.required)
     })
   }
 
@@ -32,6 +32,6 @@ export class AddReceveurComponent implements OnInit {
     }
     this.userForm.addControl('notifications',new FormControl(this.notifications));
     this.adminService.addUser(this.userForm.value);
-    this.router.navigateByUrl('/admin')
+     this.router.navigateByUrl('/admin')
   }
 }

@@ -9,12 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { AddCoffreComponent } from './reveveur/coffre/add-coffre/add-coffre.component';
 import { NouveauCoffreComponent } from './reveveur/coffre/nouveau-coffre/nouveau-coffre.component';
+import { ProfilComponent } from './profil/profil.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AddCoffreComponent,
     NouveauCoffreComponent,
+    ProfilComponent,
     
   ],
   imports: [

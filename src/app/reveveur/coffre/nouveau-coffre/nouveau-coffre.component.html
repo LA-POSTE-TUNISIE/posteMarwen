@@ -1,27 +1,123 @@
-<h1>Nouveau Coffre</h1>
-<mat-dialog-content >
-   
-         <table>
-             <tr class="mr-2">
-                 <td class=" btn mr-2">50</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                 <td class=" btn mr-2">20</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                 <td class=" btn mr-2">10</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                 <td class=" btn mr-2">5</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                 <td class=" btn mr-2">5</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                 <td class=" btn mr-2">2</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                 <td class=" btn mr-2">1</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                 <td class=" btn mr-2">0.5</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                 <td class=" btn mr-2">0.2</td>
-                 <td><input class="btn border-warning" type="number"></td>
-                
-             </tr>
-         </table>
-</mat-dialog-content>
+<div [formGroup]="demandeNormalForm" class="">
+    <h2 class="">Nouveau Coffre :</h2>matricule de coffre:<input formControlName='matriculeCoffre' type="text">
+    <table class="table table-borderless text-center">
+
+        <thead class="text-primary">
+            <tr>
+                <th class="h5 btn-lg"> valeur </th>
+                <th class="h5"> nombre de pieces </th>
+                <th class="h5"> montant</th>
+                <th class="h5"> valeur </th>
+                <th class="h5"> nombre de pieces </th>
+                <th class="h5"> montant </th>
+            </tr>
+        </thead>
+        <tbody class="btn-lg border rounded" formGroupName="details">
+            <tr>
+                <td>50</td>
+                <td>
+                    <input formControlName='DT50' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT50*50}}ᴰᵀ</h3>
+                </td>
+                <td>500 Millimes</td>
+                <td>
+                    <input formControlName='DT05' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT05}}ᴰᵀ</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>
+                    <input formControlName='DT20' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT20*20| number:'3.0-0'}}ᴰᵀ</h3>
+                </td>
+                <td>200 Millimes</td>
+                <td>
+                    <input formControlName='DT02' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT02*0.2| number:'3.0-0'}}ᴰᵀ</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>
+                    <input formControlName='DT10' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT10*10}}ᴰᵀ</h3>
+                </td>
+                <td>100 Millimes</td>
+                <td>
+                    <input formControlName='DT01' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT01*0.1}}ᴰᵀ</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>
+                    <input formControlName='DT5' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT5*5}}ᴰᵀ</h3>
+                </td>
+                <td>50 Millimes</td>
+                <td>
+                    <input formControlName='DT005' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT005*0.05}}ᴰᵀ</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>5(piece)</td>
+                <td>
+                    <input formControlName='DT5P' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT5P*5}}ᴰᵀ</h3>
+                </td>
+                <td>20 Millimes</td>
+                <td>
+                    <input formControlName='DT002' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT002*0.02}}ᴰᵀ</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <input formControlName='DT1' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT1*1}}ᴰᵀ</h3>
+                </td>
+                <td>10 Millimes</td>
+                <td>
+                    <input formControlName='DT001' type="text" placeholder="000">
+                </td>
+                <td>
+                    <h3>{{demandeNormalForm.value.details.DT001*0.01}}ᴰᵀ</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>montant total: </td>
+                <td>
+                    <p>{{(demandeNormalForm.value.details.DT50*50)+(demandeNormalForm.value.details.DT20*20)+(demandeNormalForm.value.details.DT10*10)+(demandeNormalForm.value.details.DT5*5)+(demandeNormalForm.value.details.DT5P*5)+(demandeNormalForm.value.details.DT1*1)+(demandeNormalForm.value.details.DT05*0.5)+(demandeNormalForm.value.details.DT02*0.2)+(demandeNormalForm.value.details.DT01*0.1)+(demandeNormalForm.value.details.DT005*0.05)+(demandeNormalForm.value.details.DT002*0.02)+(demandeNormalForm.value.details.DT001*0.01)}}ᴰᵀ
+                    </p>
+                </td>
+                <td colspan="4"><button (click)="demandeFondsForm()" type="button" data-toggle="collapse" href=""
+                        class="btn btn-primary abs">envoyer</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

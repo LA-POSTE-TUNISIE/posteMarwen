@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "PFE"
+  "defaultProject": "PFE",
+  "cli": {
+    "analytics": "9bfc7d16-b73e-465f-a793-79886c3b9959"
+  }
 }

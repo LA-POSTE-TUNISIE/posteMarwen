@@ -13,7 +13,9 @@ import { DemandeNormalComponent } from './dashboard/guichitier/fonds/demande/dem
 import { VersementClientComponent } from './dashboard/guichitier/fonds/versement/versement-client/versement-client.component';
 import { VersementNormalComponent } from './dashboard/guichitier/fonds/versement/versement-normal/versement-normal.component';
 import { IndexComponent } from './dashboard/guichitier/index/index.component';
+import { ProfilComponent } from './profil/profil.component';
 import { AddCoffreComponent } from './reveveur/coffre/add-coffre/add-coffre.component';
+import { NouveauCoffreComponent } from './reveveur/coffre/nouveau-coffre/nouveau-coffre.component';
 import { UpdateCoffreComponent } from './reveveur/coffre/update-coffre/update-coffre.component';
 import { ChargementComponent } from './reveveur/DAB/chargement/chargement.component';
 import { DABComponent } from './reveveur/DAB/dab/dab.component';
@@ -77,13 +79,15 @@ const routes: Routes = [
       component:FermetureCaisseComponent
     }
     ]
-  },{path:'add_coffre',
+  },{path:'coffre/add',
   component:AddCoffreComponent
+  },{path:'coffre/nouveauCoffre',
+  component:NouveauCoffreComponent
   },{
     path: 'receveur',
     component: DashboardComponent,
     children: [{
-      path: '',
+      path: ':id',
       component: IndexRComponent
     },{
       path:'guichets',

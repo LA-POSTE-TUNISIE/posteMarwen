@@ -192,23 +192,112 @@
 
         </div>
         <div class="card-body text-xl-center h1 text-blue">
-          <span>{{(coffres[0]*coffres[1])}}<span class="text-primary h3">ᴰᵀ</span><span class="h5">,250</span></span>
+          <span><span class="text-primary h3">{{coffres.montant}}ᴰᵀ</span><span class="h5">,250</span></span>
         </div>
       </div>
     </div>
   </div>
   <div class="m-2">
     <div class=" row m-1">
-      <div class="col-6 card m-1 mr-4 border border-primary">
-        <div class="border-bottom border-warning" *ngFor="let coffre of coffres">
-          <h3 class="text-warning">{{coffre[0]}}ᴰᵀ  </h3>
-          <dl class="row">
-            <dt class="text-primary col-sm-3">N° PIECES:</dt>
-            <dd class="text-blue col-sm-3">{{coffre[1]}}</dd>
-            <dt class="text-primary col-sm-3">MONTANT:</dt>
-            <dd class="text-blue col-sm-3 ">{{coffre[0]*coffre[1]}}ᴰᵀ</dd>
-          </dl>
-        </div>
+      <div class="col-9 card m-1 mr-4 border border-primary">
+        
+        <table class="table table-borderless text-center" [formGroup]="demandeNormalForm"  >
+          <thead>
+              <tr  class="text-primary">
+                  
+                  <th colspan="3" class="h5">matricule de coffre</th>
+              </tr>
+              <tr>
+                 
+                  <td colspan="3"> <input formControlName='matriculeCoffre' type="text" ></td>
+              </tr>
+          </thead>
+          <thead class="text-primary">
+              <tr>
+                  <th class="h5 btn-lg"> valeur </th>
+                  <th class="h5"> nombre de pieces </th>
+                  <th class="h5"> valeur </th>
+                  <th class="h5"> nombre de pieces </th>
+                 
+              </tr>
+          </thead>
+          <tbody class="btn-lg border rounded"formGroupName="details" >
+              <tr>
+                  <td>50</td>
+                  <td >
+                      <input formControlName='DT50' disabled type="text" placeholder="000">
+                  </td>
+                  
+                  <td>500 Millimes</td>
+                  <td>
+                      <input formControlName='DT05' disabled type="text" placeholder="000">
+                  </td>
+                 
+              </tr>
+              <tr>
+                  <td>20</td>
+                  <td>
+                      <input formControlName='DT20' disabled type="text" placeholder="000">
+                  </td>
+                 
+                  <td>200 Millimes</td>
+                  <td>
+                      <input formControlName='DT02' disabled type="text" placeholder="000">
+                  </td>
+                  
+              </tr>
+              <tr>
+                  <td>10</td>
+                  <td>
+                      <input formControlName='DT10' disabled type="text" placeholder="000">
+                  </td>
+                  
+                  <td>100 Millimes</td>
+                  <td>
+                      <input formControlName='DT01' disabled type="text" placeholder="000">
+                  </td>
+                  
+              </tr>
+              <tr>
+                  <td>5</td>
+                  <td>
+                      <input formControlName='DT5' disabled type="text" placeholder="000">
+                  </td>
+                  
+                  <td>50 Millimes</td>
+                  <td>
+                      <input formControlName='DT005'type="text" disabled placeholder="000">
+                  </td>
+                 
+              </tr>
+              <tr>
+                  <td>5(piece)</td>
+                  <td>
+                      <input formControlName='DT5P'type="text" disabled placeholder="000">
+                  </td>
+                  
+                  <td>20 Millimes</td>
+                  <td>
+                      <input formControlName='DT002' type="text" disabled placeholder="000">
+                  </td>
+                 
+              </tr>
+              <tr>
+                  <td>1</td>
+                  <td>
+                      <input formControlName='DT1' type="text" disabled placeholder="000">
+                  </td>
+                 
+                  <td>10 Millimes</td>
+                  <td>
+                      <input formControlName='DT001'type="text" disabled placeholder="000">
+                  </td>
+                 
+              </tr>
+              
+          </tbody>
+      </table>
+        
       </div>
       <!-- <div class="col card  m-1 ml-4 border border-primary">cc
       </div> -->

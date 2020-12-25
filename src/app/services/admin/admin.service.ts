@@ -1,19 +1,22 @@
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminService {
 
-  constructor() { }
-  addUser(utilisateur) {
-    const utilisateurs = JSON.parse(localStorage.getItem("utilisateurs")) || [];
-    utilisateurs.push(utilisateur);
-    localStorage.setItem('utilisateurs', JSON.stringify(utilisateurs));
+export class AdminService {
+baseUrl="/api";
+postId;
+  constructor(private  httpClient: HttpClient) { }
+
+  addUser(data) {
+    
+    this.httpClient.post<any>(this.baseUrl+'users/addUser',data).subscribe();
   }
   listUsers() {
-    const utilisateurs = JSON.parse(localStorage.getItem("utilisateurs")) || [];
-    return utilisateurs;
+   const user= this.httpClient.get(this.baseUrl+'users/allUsers');
+  return user;
   }
- 
+  
   }
 

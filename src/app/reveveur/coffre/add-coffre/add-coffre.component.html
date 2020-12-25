@@ -3,9 +3,9 @@
         <form  >
             <br>
             <div class="input-group input-group-lg mb-3">
-                <input maxlength="10" type="text" class="form-control border border-warning" placeholder="Matricule Coffre" >
+                <input maxlength="10"  [formControl]="matriculeCoffre" type="text" class="form-control border border-warning" placeholder="Matricule Coffre" >
               </div>
-              <button  type="button" class="mb-1 btn btn-outline-warning btn-lg text-primary btn-block">Connecter</button>
+              <button (click)="connect()" type="button" class="mb-1 btn btn-outline-warning btn-lg text-primary btn-block">Connecter</button>
               <br>
         </form>
        
